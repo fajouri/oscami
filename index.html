@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boda | Os & Cami</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2f3e46;
+      --accent: #84a98c;
+      --bg: #f8f9fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("img/CyO-preboda__0001_VEGACARO_PH.jpg") center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* FOTO DESTACADA */
+    .featured-photo {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .featured-photo img {
+      max-width: 420px;
+      width: 100%;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.25);
+    }
+
+    /* GALERIA */
+    .gallery-vertical {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .gallery-vertical img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    /* FOTO ARTISTICA BN */
+    .art-photo img {
+      width: 100%;
+      display: block;
+      filter: grayscale(100%);
+    }
+
+    /* FOTO DIVERTIDA */
+    .fun-photo {
+      max-width: 420px;
+      width: 100%;
+      margin: 20px auto;
+      display: block;
+      border-radius: 22px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.3);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: var(--accent);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: var(--primary);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header>
+  <div>
+    <h1>Os & Cami</h1>
+    <p>¡Nos casamos!</p>
+    <p>15/02/2026</p>
+  </div>
+</header>
+
+<!-- CEREMONIA -->
+<section>
+  <h2>Ceremonia</h2>
+  <div class="box">
+    <p><strong>Iglesia Nueva Apostólica de Ciudadela</strong></p>
+    <p>Ing. Pereyra 3545, Ciudadela</p>
+    <p>🕓 16:00 hs</p>
+  </div>
+</section>
+
+<!-- FOTO DESTACADA -->
+<section class="featured-photo">
+  <img src="img/CyO-preboda__0084_VEGACARO_PH.jpg" alt="">
+</section>
+
+<!-- CELEBRACION -->
+<section>
+  <h2>Celebración</h2>
+  <div class="box">
+    <p><strong>La Posta Eventos</strong></p>
+    <p>Ruta Panamericana Ramal Pilar km 40,5</p>
+    <p>🕡 18:30 hs</p>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section>
+  <h2>Nuestros momentos</h2>
+  <div class="gallery-vertical">
+    <img src="img/CyO-preboda__0017_VEGACARO_PH.jpg">
+    <img src="img/CyO-preboda__0095_VEGACARO_PH.jpg">
+    <img src="img/CyO-preboda__0100_VEGACARO_PH.jpg">
+  </div>
+</section>
+
+<!-- DRESS CODE -->
+<section>
+  <h2>Dress Code</h2>
+  <div class="box">
+    <p>Todos los colores excepto:</p>
+    <p><strong>Blanco · Beige · Crema</strong></p>
+  </div>
+</section>
+
+<!-- FOTO ARTISTICA -->
+<section class="art-photo">
+  <img src="img/CyO-preboda__0044_VEGACARO_PH.jpg">
+</section>
+
+<!-- RSVP -->
+<section>
+  <h2>Confirmación de asistencia</h2>
+  <div class="box">
+    <p>Por favor confirmá tu asistencia.</p>
+    <a href="[LINK_CONFIRMACION]" class="btn" target="_blank">
+      Confirmar asistencia
+    </a>
+  </div>
+</section>
+
+<!-- MENU -->
+<section>
+  <h2>Menú</h2>
+  <div class="box">
+    <p>
+      Si tenés alguna restricción alimentaria,
+      indicala al momento de confirmar asistencia.
+    </p>
+  </div>
+</section>
+
+<!-- MUSICA -->
+<section>
+  <h2>Música 🎶</h2>
+  <div class="box">
+    <img src="img/CyO-preboda__0113_VEGACARO_PH.jpg" class="fun-photo">
+    <p>Ayudanos a armar la playlist.</p>
+    <p>Sugerí ese tema que no puede faltar.</p>
+  </div>
+</section>
+
+<!-- REGALO -->
+<section>
+  <h2>Regalo</h2>
+  <div class="box">
+    <p>Su presencia es nuestro mayor regalo 💛</p>
+    <p>
+      Si desean acompañarnos un poquito más,
+      pueden ayudarnos a crear recuerdos inolvidables
+      en nuestra luna de miel ✨
+    </p>
+    <p><em>Datos bancarios a continuación (los pasa OS)</em></p>
+  </div>
+</section>
+
+<footer>
+  <p>Con amor</p>
+  <p>Os & Cami</p>
+</footer>
+
+</body>
+</html>
