@@ -167,29 +167,6 @@
 
   </style>
 </head>
-<script>
-  const weddingDate = new Date("2025-03-15T16:00:00").getTime(); // AJUSTAR FECHA
-
-  const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const diff = weddingDate - now;
-
-    if (diff < 0) {
-      clearInterval(countdown);
-      return;
-    }
-
-    document.getElementById("days").innerText =
-      Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText =
-      Math.floor((diff / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText =
-      Math.floor((diff / (1000 * 60)) % 60);
-    document.getElementById("seconds").innerText =
-      Math.floor((diff / 1000) % 60);
-  }, 1000);
-</script>
-
 <body>
 
 <!-- HERO -->
@@ -198,13 +175,14 @@
     <h1>Os & Cami</h1>
     <p>¡Nos casamos!</p>
     <p>15/02/2026</p>
+    <div id="countdown">
+      <div><span id="days">00</span><small>Días</small></div>
+      <div><span id="hours">00</span><small>Horas</small></div>
+      <div><span id="minutes">00</span><small>Min</small></div>
+      <div><span id="seconds">00</span><small>Seg</small></div>
+    </div>
   </div>
-  <div id="countdown">
-  <div><span id="days">00</span><small>Días</small></div>
-  <div><span id="hours">00</span><small>Horas</small></div>
-  <div><span id="minutes">00</span><small>Min</small></div>
-  <div><span id="seconds">00</span><small>Seg</small></div>
-</div>
+  
 </header>
 
 <!-- CEREMONIA -->
@@ -306,6 +284,34 @@
   <p>Con amor</p>
   <p>Os & Cami</p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const weddingDate = new Date("2026-02-15T16:00:00").getTime();
+
+  const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    if (diff <= 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML =
+        "<p>¡Hoy es el gran día! 💍</p>";
+      return;
+    }
+
+    document.getElementById("days").textContent =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").textContent =
+      Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").textContent =
+      Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").textContent =
+      Math.floor((diff / 1000) % 60);
+  }, 1000);
+});
+</script>
+
 
 </body>
 </html>
