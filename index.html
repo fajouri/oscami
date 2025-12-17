@@ -140,8 +140,55 @@
       text-align: center;
       padding: 40px 20px;
     }
+    #countdown {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#countdown div {
+  background: rgba(255,255,255,.15);
+  padding: 14px 16px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+#countdown span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: block;
+}
+
+#countdown small {
+  font-size: .7rem;
+  letter-spacing: 1px;
+}
+
   </style>
 </head>
+<script>
+  const weddingDate = new Date("2025-03-15T16:00:00").getTime(); // AJUSTAR FECHA
+
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    if (diff < 0) {
+      clearInterval(countdown);
+      return;
+    }
+
+    document.getElementById("days").innerText =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText =
+      Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText =
+      Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText =
+      Math.floor((diff / 1000) % 60);
+  }, 1000);
+</script>
 
 <body>
 
