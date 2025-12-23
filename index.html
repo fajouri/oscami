@@ -328,7 +328,85 @@
   .final-text {
     text-align: center;
   }
-}</style>
+}
+
+/* CAROUSEL */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.carousel-inner {
+  display: flex;
+  width: 400%; /* 4 slides */
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  width: 25%; /* 100% / 4 */
+  flex-shrink: 0;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-nav label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-nav label:hover {
+  background: rgba(255,255,255,0.8);
+}
+
+#slide1:checked ~ .carousel-inner {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .carousel-inner {
+  transform: translateX(-25%);
+}
+
+#slide3:checked ~ .carousel-inner {
+  transform: translateX(-50%);
+}
+
+#slide4:checked ~ .carousel-inner {
+  transform: translateX(-75%);
+}
+
+#slide1:checked ~ .carousel-nav label[for="slide1"],
+#slide2:checked ~ .carousel-nav label[for="slide2"],
+#slide3:checked ~ .carousel-nav label[for="slide3"],
+#slide4:checked ~ .carousel-nav label[for="slide4"] {
+  background: white;
+}
+
+.carousel input {
+  display: none;
+}
+</style>
 </head>
 <body>
 <audio id="bg-music" loop>
@@ -448,6 +526,38 @@ href="https://www.google.com/maps/search/?api=1&query=La+Posta+Eventos+Pilar">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSckHJ9v0MZIBAFCHICgQS0Ebn9AUOJlYma9w0yjW_btvPt6_A/viewform" class="btn" target="_blank">
       Confirmar asistencia
     </a>
+  </div>
+</section>
+
+<!-- CAROUSEL -->
+<section>
+  <div class="carousel">
+    <input type="radio" name="carousel" id="slide1" checked>
+    <input type="radio" name="carousel" id="slide2">
+    <input type="radio" name="carousel" id="slide3">
+    <input type="radio" name="carousel" id="slide4">
+    
+    <div class="carousel-inner">
+      <div class="carousel-slide">
+        <img src="img/oscamirandom.webp" alt="Imagen 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="img/oscamirandom2.webp" alt="Imagen 2">
+      </div>
+      <div class="carousel-slide">
+        <img src="img/oscamirandom3.webp" alt="Imagen 3">
+      </div>
+      <div class="carousel-slide">
+        <img src="img/oscamirandom4.webp" alt="Imagen 4">
+      </div>
+    </div>
+    
+    <div class="carousel-nav">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+    </div>
   </div>
 </section>
 
